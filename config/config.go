@@ -25,7 +25,7 @@ const (
 	SettingListenDefault = ":8080"
 
 	// SettingElasticsearchAddreessees is the config key for the elasticsearch addresses
-	SettingElasticsearchAddresses = "addresses"
+	SettingElasticsearchAddresses = "elasticsearch_addresses"
 	// SettingListenDefault is the default value for the elasticsearch addresses
 	SettingElasticsearchAddressesDefault = "http://localhost:9200"
 
