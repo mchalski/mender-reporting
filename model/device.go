@@ -63,6 +63,8 @@ func NewDeviceFromInv(tenant string, invdev *InvDevice) (*Device, error) {
 	// rewrite attributes
 	// special treatment for some attributes which become fields as well
 	for _, invattr := range invdev.Attributes {
+		fmt.Printf("rewriting attribute %v\n", invattr)
+
 		attr := NewInventoryAttribute(invattr.Scope)
 
 		attr.SetName(invattr.Name).
