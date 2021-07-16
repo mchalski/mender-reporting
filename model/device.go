@@ -480,6 +480,11 @@ func (d *Device) MarshalJSON() ([]byte, error) {
 		m[name] = val
 	}
 
+	for _, a := range d.SystemAttributes {
+		name, val := a.Map()
+		m[name] = val
+	}
+
 	return json.Marshal(m)
 }
 
@@ -508,7 +513,7 @@ func MaybeParseAttr(field string) (string, string, error) {
 	scope := ""
 	name := ""
 
-	for _, s := range []string{scopeInventory, scopeIdentity, scopeCustom} {
+	for _, s := range []string{scopeInventory, scopeIdentity, scopeCustom, scopeSystem} {
 		if strings.HasPrefix(field, s+"_") {
 			scope = s
 			break
